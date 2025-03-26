@@ -1,28 +1,23 @@
 #include<stdio.h>
+int calculate_sum(int arr[],int size)
+{
+int sum=0;
+for(int i=0;i<size;i++){
+sum+=arr[i];
+}
+return sum;
+}
 int main(){
-int lim,i;
-printf("enter the limit");
-scanf("%d",&lim);
-int arr[lim];
+int size ;
+int i;
+printf(" enter the size of array");
+scanf("%d",&size);
 printf("enter the elements");
-for(i=0;i<lim;i++){
-scanf("%d",&arr[i]);
+int array[size];
+for( i =0;i<size;i++){
+scanf("%d",&array[i]);
 }
-for(int i=0;i<lim-1;i++){
-for(int j=0;j<lim-i;j++){
-if(arr[j]>arr[j+1]){
-int temp=arr[j];
-arr[j]=arr[j+1];
-arr[j+1]=temp;
-}
-}
-}
-printf("\n the sorted array is : \t");
-for(int i=0;i<lim;i++){
-printf("%d\t",arr[i]);
-}
-
-
+int sum=calculate_sum(array,size);
+printf(" the sum of array elements is %d\n",sum);
 return 0;
 }
-
